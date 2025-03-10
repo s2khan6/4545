@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main_page</title>
+    <link rel="stylesheet" href="{% static './css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Веб-приложение</h1>
+      <nav>
+        <ul>
+          <li><a href="{% url 'main_page' %}">Главная</a></li>
+          <li><a href="{% url 'post_list_page' %}">Вакансии</a></li>
+          <li><a href="{% url 'contact_page' %}">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p>Краткое описание сервиса.</p>
+      <a href="post_list.html" class="button">Перейти к вакансиям</a>
+    </main>
+  </body>
+</html>

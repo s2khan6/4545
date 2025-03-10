@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static './css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Контактная информация</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Главная</a></li>
+          <li><a href="post_list.html">Вакансии</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p>Наши контакты: example@example.com</p>
+      <form>
+        <input type="text" placeholder="Ваше имя" />
+        <input type="email" placeholder="Ваш email" />
+        <textarea placeholder="Ваше сообщение"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </main>
+  </body>
+</html>
