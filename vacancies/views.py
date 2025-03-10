@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from .models import Vacancy
-# Create your views here.
 
+def main(request):
+    return render(request, 'main.html')
 
-def vacancy_list(request):
-    vacancies = Vacancy.objects.all()
-    return render(request, 'vacancies/list.html', {'vacancies': vacancies})
+def post_list(request):
+    return render(request, 'post_list.html')
+
+def contact(request):
+    return render(request, 'contact.html')  # Проверим, что шаблон есть

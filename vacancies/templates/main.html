@@ -4,23 +4,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main_page</title>
+    <title>Main page</title>
     <link rel="stylesheet" href="{% static './css/style.css' %}" />
   </head>
   <body>
-    <header>
-      <h1>Веб-приложение</h1>
-      <nav>
-        <ul>
-          <li><a href="{% url 'main_page' %}">Главная</a></li>
-          <li><a href="{% url 'post_list_page' %}">Вакансии</a></li>
-          <li><a href="{% url 'contact_page' %}">Контакты</a></li>
-        </ul>
-      </nav>
+    <header class="header">
+      <div class="header-inners">
+        <li><a href="{% url 'main_page' %}">Главная</a></li>
+        <li><a href="{% url 'post_list_page' %}">Вакансии</a></li>
+        <li><a href="{% url 'contact_page' %}">Контакты</a></li>
+      </div>
     </header>
     <main>
-      <p>Краткое описание сервиса.</p>
-      <a href="post_list.html" class="button">Перейти к вакансиям</a>
+      <h1>Home</h1>
+      <div class="categoty">
+        <h3>Категории</h3>
+        {% for category in categories %}
+        <a href="" style="margin-right: 10px">{{ category.name }}</a>
+        {% endfor %}
+        <hr />
+      </div>
+
+      <div class="vacant">
+        <div class="vacant-inner">
+          <h2>Вакансии</h2>
+          {% for vacancy in vacancies %}
+          <li>
+            <a href="{% url 'vacancy_detail' id=vacancy.id %}">
+                <strong>{{ vacancy.title }}</strong> -
+                {{ vacancy.company }}, з/п {{ vacancy.salary }} тенге
+            </a>
+        </li>
+          {% endfor %}
+        </div>
+      </div>
     </main>
   </body>
 </html>
